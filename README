@@ -11,7 +11,7 @@
     disc[u]  – discovery time when u is first visited.  
     low[u]   – the earliest discovery time reachable from u through
       (i) tree edges in the DFS subtree below *u* plus  
-      (ii) at most **one** back edge.
+      (ii) at most one back edge.
 
     During DFS, an edge (u, v) with parent u is a bridge iff low[v] > disc[u]
     because v’s subtree cannot reach an ancestor of u without crossing (u, v).
