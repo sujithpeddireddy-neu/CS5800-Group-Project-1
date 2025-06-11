@@ -1,5 +1,4 @@
-    Returns every critical connection (bridge) in an undirected, connected
-    network of n servers.
+    Returns every critical connection (bridge) in an undirected, connected network of n servers.
 
     Problem :
     Each edge [u, v] is a bidirectional cable.  
@@ -9,13 +8,12 @@
     Algorithm :
     Tarjan’s depth-first-search keeps two timestamps for each vertex u:
 
-    • disc[u]  – discovery time when u is first visited.  
-    • low[u]   – the earliest discovery time reachable from u through
+    disc[u]  – discovery time when u is first visited.  
+    low[u]   – the earliest discovery time reachable from u through
       (i) tree edges in the DFS subtree below *u* plus  
       (ii) at most **one** back edge.
 
-    During DFS, an edge (u, v) with parent u is a **bridge** *iff*
-        low[v] > disc[u]
+    During DFS, an edge (u, v) with parent u is a bridge iff low[v] > disc[u]
     because v’s subtree cannot reach an ancestor of u without crossing (u, v).
 
     The traversal is O(V + E) time and O(V + E) space.
